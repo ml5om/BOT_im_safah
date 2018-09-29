@@ -430,8 +430,6 @@ client.on('message', message => {
    message.author.sendMessage(`
 **= = الأوامر العامة = =
  
- #color   : لتغيير لونك في السيرفر
- #colors  : قائمة الألوان
  ${prefix}server : لإضهار معلومات السيرفر
 ${prefix}id : 
  ${prefix}bots : لمعرفة كم بوت في السيرفر
