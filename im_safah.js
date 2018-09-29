@@ -524,7 +524,9 @@ client.on('message', message => {
     if (message.author.bot) return; 
  if(message.content == "+help"){
     
-   message.author.sendMessage(`**الأوامر العامة 
+   message.author.sendMessage(`
+**= = الأوامر العامة = =
+ 
  #color   : لتغيير لونك في السيرفر
  #colors  : قائمة الألوان
  ${prefix}server : لإضهار معلومات السيرفر
