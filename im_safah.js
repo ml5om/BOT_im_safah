@@ -115,13 +115,13 @@ var mentionned = message.mentions.members.first();
 
 
 
-
 client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
+    var args = message.content.split(' ');
     if(message.content.includes('https://')){
-      if(!message.member.hasPermission('ADMINISTRATOR'))
+      if(!message.member.hasPermission('ADMINISTRATOR')) {
         message.delete()
     return message.reply(`** يمنع نشر الروابط بهذا السيرفر  :angry: ! **`)
+    }
     }
 });
 
