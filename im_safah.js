@@ -7,7 +7,7 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const client = new Discord.Client();
-const prefix = '+'
+const prefix = 'sf'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -125,7 +125,7 @@ message.reply('** يمنع نشر الروابط بهذا السيرفر  :angry
 	   	   
 
 client.on("message", (message) => {
-    if (message.content.startsWith("+ban ")) {
+    if (message.content.startsWith("sfban ")) {
       if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('⚠ ماعندك الصلاحيات');
         var member= message.mentions.members.first();
         member.ban().then((member) => {
@@ -141,7 +141,7 @@ client.on("message", (message) => {
 
 client.on('message', message => {
     if (message.author.bot) return;
-    if (message.content.startsWith("+pic")) {
+    if (message.content.startsWith("sfpic")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -161,7 +161,7 @@ client.on('message', message => {
 
 
 client.on('message' , async (message) => {
-       if(message.content.startsWith("+clear")) {
+       if(message.content.startsWith("sfclear")) {
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return 
            let args = message.content.split(" ").slice(1);
  if (isNaN(args[0])) return message.channel.send('**Please supply a valid amount of messages to purge**');
@@ -173,22 +173,11 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return
 }
 });
 
-
-
-  client.on('message', message => {
-if(message.content == '<@463288157778083854>') {
-message.channel.startTyping()
-setTimeout(() => { 
-message.channel.stopTyping()
-}, 7000);
-}
-});
-  
   
   
 client.on('message', message => {
               if(!message.channel.guild) return;
-    if(message.content.startsWith('+bc')) {
+    if(message.content.startsWith('sfbc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
@@ -234,7 +223,7 @@ client.on('message', message => {
 
 
 client.on("message", (message) => {
-    if (message.content.startsWith("+kick ")) {
+    if (message.content.startsWith("sfkick ")) {
       if(!message.member.hasPermission('KICK_MEMBERS')) return message.reply('⚠ ماعندك الصلاحيات');
         var member= message.mentions.members.first();
         member.kick().then((member) => {
@@ -280,7 +269,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**You
   
   
   client.on('message', eyad => {
-  if (eyad.content.startsWith('+vban')) {
+  if (eyad.content.startsWith('sfvban')) {
 if (!eyad.member.hasPermission("MOVE_MEMBERS")) return eyad.channel.send("**انت لا تمتلك الخاصيه المطلوبه** | ❎ ");
 let men = eyad.mentions.users.first()
 let mas = eyad.author
@@ -312,7 +301,7 @@ eyad.channel.sendEmbed(Embed11).then(eyad => {eyad.delete(10000)})
 
 
   client.on('message', eyad => {
-  if (eyad.content.startsWith('+uvban')) {
+  if (eyad.content.startsWith('sfuvban')) {
 if (!eyad.member.hasPermission("MOVE_MEMBERS")) return eyad.channel.send("**انت لا تمتلك الخاصيه المطلوبه** | ❎ ");
  let men = eyad.mentions.users.first()
  let mas = eyad.author
@@ -374,7 +363,7 @@ message.channel.send(embed)
 
 
 client.on('message', function(msg) {
-  if(msg.content.startsWith ('+server')) {
+  if(msg.content.startsWith ('sfserver')) {
     if(!msg.channel.guild) return msg.reply('**:x: اسف لكن هذا الامر للسيرفرات فقط **');         
     let embed = new Discord.RichEmbed()
     .setColor('RANDOM')
@@ -397,7 +386,7 @@ client.on('message', function(msg) {
 
     client.on('message', message => {
     if(!message.channel.guild) return;
-if (message.content.startsWith('+ping')) {
+if (message.content.startsWith('sfping')) {
 if(!message.channel.guild) return;
 var msg = `${Date.now() - message.createdTimestamp}`
 var api = `${Math.round(client.ping)}`
@@ -415,9 +404,9 @@ message.channel.send({embed:embed});
 
 
   client.on('message', ra3d => {
-var prefix = "+";
+var prefix = "sf";
                         let args = ra3d.content.split(" ").slice(1).join(" ")
-if(ra3d.content.startsWith(prefix + '+cc')) {
+if(ra3d.content.startsWith(prefix + 'sfcc')) {
     if(!args) return ra3d.channel.send('`يرجي اختيار كم لون `');
              if (!ra3d.member.hasPermission('MANAGE_ROLES')) return ra3d.channel.sendMessage('`**⚠ | `[MANAGE_ROLES]` لا يوجد لديك صلاحية**'); 
               ra3d.channel.send(`**✅ |Created __${args}__ Colors**`);
@@ -438,7 +427,7 @@ if(ra3d.content.startsWith(prefix + '+cc')) {
 
 client.on('message', message => {
     if (message.author.bot) return; 
- if(message.content == "+help"){
+ if(message.content == "sfhelp"){
     
    message.author.sendMessage(`
 **= = الأوامر العامة = =
